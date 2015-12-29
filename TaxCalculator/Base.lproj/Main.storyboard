@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OeN-ZI-9BC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tax Calc-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-9k-p6Q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="tintColor" red="0.88071718382628483" green="0.93920039733333338" blue="0.85714379700000032" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" placeholder="Price" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KqE-Co-fsM">
+                                <rect key="frame" x="20" y="93" width="560" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pUz-7Y-I3e">
+                                <rect key="frame" x="20" y="145" width="560" height="29"/>
+                                <color key="backgroundColor" red="0.9639423077" green="0.9639423077" blue="0.9639423077" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="CA"/>
+                                    <segment title="CHI"/>
+                                    <segment title="NY"/>
+                                </segments>
+                            </segmentedControl>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax equals..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePV-IA-RW7">
+                                <rect key="frame" x="20" y="254" width="560" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pq-jU-7Ye">
+                                <rect key="frame" x="246" y="195" width="109" height="34"/>
+                                <state key="normal" title="Calculate Tax">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eky-Od-tIh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96394230769230771" green="0.96394230769230771" blue="0.96394230769230771" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="KqE-Co-fsM" firstAttribute="leading" secondItem="pUz-7Y-I3e" secondAttribute="leading" id="6hl-NQ-LBV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ePV-IA-RW7" secondAttribute="trailing" id="JEP-O9-cT9"/>
+                            <constraint firstItem="1ZN-9k-p6Q" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="LaA-RO-iOA"/>
+                            <constraint firstItem="KqE-Co-fsM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="M9p-DR-dru"/>
+                            <constraint firstItem="KqE-Co-fsM" firstAttribute="trailing" secondItem="ePV-IA-RW7" secondAttribute="trailing" id="Pdc-f9-unu"/>
+                            <constraint firstItem="KqE-Co-fsM" firstAttribute="trailing" secondItem="pUz-7Y-I3e" secondAttribute="trailing" id="WPM-xk-1uM"/>
+                            <constraint firstItem="1ZN-9k-p6Q" firstAttribute="centerX" secondItem="pUz-7Y-I3e" secondAttribute="centerX" id="YIG-jd-HCT"/>
+                            <constraint firstItem="1ZN-9k-p6Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aMu-hT-qDn"/>
+                            <constraint firstItem="pUz-7Y-I3e" firstAttribute="top" secondItem="KqE-Co-fsM" secondAttribute="bottom" constant="22" id="bbZ-Fq-Tq0"/>
+                            <constraint firstItem="KqE-Co-fsM" firstAttribute="leading" secondItem="ePV-IA-RW7" secondAttribute="leading" id="dZU-bc-ucc"/>
+                            <constraint firstItem="8Pq-jU-7Ye" firstAttribute="centerX" secondItem="pUz-7Y-I3e" secondAttribute="centerX" id="erg-RT-rpi"/>
+                            <constraint firstItem="8Pq-jU-7Ye" firstAttribute="top" secondItem="pUz-7Y-I3e" secondAttribute="bottom" constant="22" id="hEy-p2-ZUq"/>
+                            <constraint firstItem="1ZN-9k-p6Q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jZj-B7-85q"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ePV-IA-RW7" secondAttribute="leading" id="qeZ-Tc-8xO"/>
+                            <constraint firstItem="ePV-IA-RW7" firstAttribute="top" secondItem="8Pq-jU-7Ye" secondAttribute="bottom" constant="25" id="vrK-V9-MxF"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Tax Calc" id="Wbd-xV-1XQ"/>
+                    <connections>
+                        <outlet property="onCalculateButtonTapped" destination="8Pq-jU-7Ye" id="I8B-LR-6xt"/>
+                        <outlet property="priceTextField" destination="KqE-Co-fsM" id="Clc-Ba-hfB"/>
+                        <outlet property="resultLabel" destination="ePV-IA-RW7" id="wIq-HX-zb2"/>
+                        <outlet property="segmentedControl" destination="pUz-7Y-I3e" id="ykg-Uq-dHJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1137" y="398"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2eA-Dz-eQy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OeN-ZI-9BC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W1e-a7-4HV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9RS-je-dyt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XtB-Dy-mlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="398"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wallpaper" width="640" height="360"/>
+    </resources>
+    <color key="tintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
